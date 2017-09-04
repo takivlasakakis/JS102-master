@@ -67,4 +67,20 @@ animals.push(bobBarker,kittyKabootle);
 
 console.log(animals, 'added two more objects', animals.length);
 
+var AnimalTestUser = function(username) {
+	var argLength = arguments.length;
+	var otherArgs = [];
+	if (argLength > 1) {
+		for (var i=1; i < argLength; i++) {
+			otherArgs.push(arguments[i]);
+		}
+	}
 
+	return {
+		username: username,
+		otherArgs: otherArgs
+	};
+};
+
+var testSheep = AnimalTestUser('CottonBall', {'loves dancing': true}, [1,2,3]);
+console.log(testSheep);
